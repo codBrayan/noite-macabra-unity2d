@@ -1,0 +1,86 @@
+Assets/
+│
+├── Art/
+│   ├── Sprites/
+│   │   ├── Player/
+│   │   ├── Enemies/
+│   │   ├── Boss/
+│   │   ├── Environment/
+│   │   └── UI/
+│   ├── Animations/
+│   │   ├── Player/
+│   │   ├── Enemies/
+│   │   ├── Boss/
+│   │   └── UI/
+│   └── Tilesets/
+│
+├── Audio/
+│   ├── Music/
+│   ├── SFX/
+│   │   ├── Player/
+│   │   ├── Enemies/
+│   │   └── Environment/
+│
+├── Prefabs/
+│   ├── Player/
+│   ├── Enemies/
+│   ├── Boss/
+│   ├── Projectiles/
+│   ├── PowerUps/
+│   └── UI/
+│
+├── Scripts/
+│   ├── Player/
+│   │   ├── PlayerMovement.cs
+│   │   ├── PlayerShooting.cs
+│   │   ├── PlayerHealth.cs
+│   │   └── PlayerPowerUps.cs
+│   │
+│   ├── Enemy/
+│   │   ├── EnemyController.cs
+│   │   ├── EnemyAI.cs
+│   │   └── EnemyAttack.cs
+│   │
+│   ├── Boss/
+│   │   ├── BossController.cs
+│   │   ├── BossStateMachine/
+│   │   │   ├── BossStateBase.cs
+│   │   │   ├── BossIdleState.cs
+│   │   │   ├── BossAttackState.cs
+│   │   │   └── BossDeathState.cs
+│   │
+│   ├── Systems/
+│   │   ├── GameManager.cs
+│   │   ├── UIManager.cs
+│   │   ├── AudioManager.cs
+│   │   ├── SceneLoader.cs
+│   │   └── ObjectPooler.cs
+│   │
+│   ├── PowerUps/
+│   │   ├── PowerUpBase.cs
+│   │   ├── PowerUpFireRate.cs
+│   │   └── PowerUpShield.cs
+│   │
+│   ├── StateMachines/
+│   │   ├── Player/
+│   │   └── Enemy/
+│   │
+│   └── Utilities/
+│       ├── Extensions/
+│       └── Helpers/
+│
+├── Scenes/
+│   ├── MainMenu.unity
+│   ├── Level1.unity
+│   ├── BossFight.unity
+│   └── GameOver.unity
+│
+├── Settings/
+│   ├── Input/
+│   ├── Physics2D/
+│   └── Rendering/
+│
+└── UI/
+    ├── Canvas/
+    ├── Prefabs/
+    └── Sprites/
