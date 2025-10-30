@@ -1,0 +1,84 @@
+# ---- UNITY PROJECT ----
+# Caminhos ajustados para o projeto "My project"
+
+My project/[Ll]ibrary/
+My project/[Tt]emp/
+My project/[Oo]bj/
+My project/[Bb]uild/
+My project/[Bb]uilds/
+My project/[Ll]ogs/
+My project/[Uu]ser[Ss]ettings/
+My project/*.log
+
+My project/*.blend1
+My project/*.blend1.meta
+My project/[Mm]emoryCaptures/
+My project/[Rr]ecordings/
+
+# Jetbrains Rider
+My project/[Aa]ssets/Plugins/Editor/JetBrains*
+My project/*.DotSettings.user
+
+# Visual Studio cache directory
+My project/.vs/
+My project/.gradle/
+My project/ExportedObj/
+My project/.consulo/
+My project/*.csproj
+My project/*.unityproj
+My project/*.sln
+My project/*.suo
+My project/*.tmp
+My project/*.user
+My project/*.userprefs
+My project/*.pidb
+My project/*.booproj
+My project/*.svd
+My project/*.pdb
+My project/*.mdb
+My project/*.opendb
+My project/*.VC.db
+
+# Unity meta e cache
+My project/*.pidb.meta
+My project/*.pdb.meta
+My project/*.mdb.meta
+My project/sysinfo.txt
+My project/mono_crash.*
+
+# Builds
+My project/*.apk
+My project/*.aab
+My project/*.unitypackage
+My project/*.unitypackage.meta
+My project/*.app
+
+# Crashlytics
+My project/crashlytics-build.properties
+
+# TestRunner
+My project/InitTestScene*.unity*
+
+# Addressables
+My project/ServerData/
+My project/[Aa]ssets/StreamingAssets/aa*
+My project/[Aa]ssets/AddressableAssetsData/link.xml*
+My project/[Aa]ssets/Addressables_Temp*
+My project/[Aa]ssets/AddressableAssetsData/*/*.bin*
+
+# Visual Scripting
+My project/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
+My project/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
+My project/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
+My project/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
+My project/[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# ---- OTHER FILES ----
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs e temporários
+*.tmp
+*.bak
+*.log
