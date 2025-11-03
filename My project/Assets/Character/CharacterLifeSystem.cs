@@ -1,11 +1,47 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CharacterLifeSystem : MonoBehaviour
 {
-        public void TakeDamage(int damage)
-{
-    // Aqui você pode criar seu sistema de vida depois
-    Debug.Log($"Player tomou {damage} de dano!");
-}
+    [Header("Configuração de Vida")]
+    public int startLives = 3;     
+    public int currentLives;       
+    public LifeUI lifeUI;
+
+    void Start()
+    {
+        currentLives = startLives;
+        UpdateLifeUI();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentLives -= damage;
+        currentLives = Mathf.Max(currentLives, 0);
+
+        Debug.Log($"💥 Player tomou {damage} de dano! Vidas restantes: {currentLives}");
+        UpdateLifeUI();
+
+        if (currentLives <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void AddLife(int amount)
+    {
+        currentLives += amount;
+        Debug.Log($"💖 Player ganhou {amount} vida(s)! Total: {currentLives}");
+        UpdateLifeUI();
+    }
+
+    private void UpdateLifeUI()
+    {
+        if (lifeUI != null)
+            lifeUI.UpdateLife(currentLives);
+    }
+
+    private void Die()
+    {
+        Debug.Log("💀 Game Over!");
+    }
 }
