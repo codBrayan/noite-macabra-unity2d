@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LifeUI : MonoBehaviour
 {
     public Image playerIcon;
-    public Image heartIcon;
-    public Text livesText;
+    public TextMeshProUGUI livesText;
 
     public void UpdateLife(int currentLives)
     {
