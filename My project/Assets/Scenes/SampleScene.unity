@@ -2409,8 +2409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LifePowerUpSpawner
   lifePowerUp: {fileID: 4989146190438082700, guid: cd173ed6568c81f4187e6e57dbc5f83f, type: 3}
   spawnInterval: 10
-  spawnAreaMin: {x: -23, y: -4}
-  spawnAreaMax: {x: 23, y: 4}
+  spawnAreaMin: {x: -10, y: -4}
+  spawnAreaMax: {x: 10, y: 4}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
