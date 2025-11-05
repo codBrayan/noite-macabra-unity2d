@@ -43,5 +43,8 @@ public class CharacterLifeSystem : MonoBehaviour
     private void Die()
     {
         Debug.Log("💀 Game Over!");
+
+        if (GameOverManager.Instance != null)
+            GameOverManager.Instance.ShowGameOver();
     }
 }
