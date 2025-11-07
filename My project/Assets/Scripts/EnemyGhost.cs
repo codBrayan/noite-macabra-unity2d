@@ -35,11 +35,14 @@ public class EnemyGhost : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"Colidiu com {collision.name}");
-
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<CharacterLifeSystem>().TakeDamage(damage);
+            var life = collision.GetComponent<CharacterLifeSystem>();
+            life.TakeDamage(damage);
+
+            if (GameRunManager.Instance != null)
+                GameRunManager.Instance.OnPlayerHit();
+
             Destroy(gameObject);
         }
     }

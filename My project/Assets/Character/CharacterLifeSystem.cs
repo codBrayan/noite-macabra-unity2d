@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharacterLifeSystem : MonoBehaviour
 {
@@ -40,11 +41,19 @@ public class CharacterLifeSystem : MonoBehaviour
             lifeUI.UpdateLife(currentLives);
     }
 
-    private void Die()
-    {
-        Debug.Log("💀 Game Over!");
+private void Die()
+{
+    Debug.Log("💀 Game Over!");
 
-        if (GameOverManager.Instance != null)
-            GameOverManager.Instance.ShowGameOver();
-    }
+    var input = GetComponent<PlayerInput>();
+    if (input != null)
+        input.enabled = false;
+
+    var movement = GetComponent<CharacterMovement>();
+    if (movement != null)
+        movement.enabled = false;
+
+    if (GameOverManager.Instance != null)
+        GameOverManager.Instance.ShowGameOver();
+}
 }

@@ -35,6 +35,8 @@ public class GameOverManager : MonoBehaviour
     {
         if (gameOverUI != null)
             gameOverUI.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 
     void RestartGame()

@@ -74,6 +74,12 @@ public class GhostSpawner : MonoBehaviour
         return spawnPos;
     }
 
+    public void ResetSpawner()
+    {
+        timer = 0f;
+        StopAllCoroutines();
+    }
+
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
