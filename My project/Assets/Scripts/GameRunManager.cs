@@ -34,8 +34,8 @@ public class GameRunManager : MonoBehaviour
 
         // Para o spawn e remove inimigos
         if (ghostSpawner) ghostSpawner.StopAllCoroutines();
-        foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-            Destroy(enemy);
+        //foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        //    Destroy(enemy);
 
         // Espera e retoma
         StartCoroutine(RestartRun());

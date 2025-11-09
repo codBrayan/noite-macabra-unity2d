@@ -41,6 +41,8 @@ public class GameOverManager : MonoBehaviour
 
     void RestartGame()
     {
+        Time.timeScale = 1f; // Restaura o tempo ao normal
+
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
