@@ -1337,7 +1337,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4428552364484129340, guid: ae1ea2fda75f4fc418b87170a99141cb, type: 3}
   firePoint: {fileID: 1678910146}
   fireRate: 5
-  numberOfProjectiles: 1
 --- !u!114 &581531768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3462,9 +3461,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GhostSpawner
   ghostPrefab: {fileID: 774644564711755916, guid: e2bc362d5bccb6d4fbc156b88c66f4ea, type: 3}
-  spawnInterval: 5
+  spawnInterval: 0.7
   spawnDistance: 3
   mainCamera: {fileID: 519420031}
+--- !u!1 &933467717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933467718}
+  - component: {fileID: 933467719}
+  m_Layer: 0
+  m_Name: MultiShotSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &933467718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933467717}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2075236917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &933467719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933467717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3f04b9f1c3e054388f22b8ed4cc359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MultiShotSpawner
+  multiShotPowerUp: {fileID: 7720386951018030704, guid: 4a201d59297e9a145b800ca5cbe251be, type: 3}
+  spawnInterval: 10
+  spawnAreaMin: {x: -10, y: -10}
+  spawnAreaMax: {x: 10, y: 10}
 --- !u!1 &1006877592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,6 +3876,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1126934573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1126934574}
+  - component: {fileID: 1126934575}
+  m_Layer: 0
+  m_Name: LifeUpSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1126934574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126934573}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2075236917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1126934575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126934573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9826e82669455674d8856331dee7990c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LifePowerUpSpawner
+  lifePowerUp: {fileID: 4989146190438082700, guid: cd173ed6568c81f4187e6e57dbc5f83f, type: 3}
+  spawnInterval: 10
+  spawnAreaMin: {x: -10, y: -10}
+  spawnAreaMax: {x: 10, y: 10}
 --- !u!1 &1168436766
 GameObject:
   m_ObjectHideFlags: 0
@@ -11265,7 +11360,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2075236917}
-  - component: {fileID: 2075236918}
   m_Layer: 0
   m_Name: PowerUpSpawner
   m_TagString: Untagged
@@ -11285,25 +11379,11 @@ Transform:
   m_LocalPosition: {x: 67.17228, y: -12.50712, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1126934574}
+  - {fileID: 933467718}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2075236918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075236915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9826e82669455674d8856331dee7990c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LifePowerUpSpawner
-  lifePowerUp: {fileID: 4989146190438082700, guid: cd173ed6568c81f4187e6e57dbc5f83f, type: 3}
-  spawnInterval: 10
-  spawnAreaMin: {x: -10, y: -4}
-  spawnAreaMax: {x: 10, y: 4}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
