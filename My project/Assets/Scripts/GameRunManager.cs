@@ -12,6 +12,7 @@ public class GameRunManager : MonoBehaviour
 
     private bool isRestarting = false;
     private bool victoryShown = false;
+    private bool playerHit = false;
 
     void Awake()
     {
@@ -36,6 +37,7 @@ public class GameRunManager : MonoBehaviour
     {
         if (isRestarting) return;
         isRestarting = true;
+        playerHit = true;
 
         Debug.Log("💢 Player atingido — pausando run...");
 
@@ -59,7 +61,8 @@ public class GameRunManager : MonoBehaviour
 
     void Update()
     {
-        if (victoryShown || isRestarting) return; // impede checagem durante reinício
+        // Se estiver reiniciando ou o jogador acabou de morrer, não verifica vitória
+        if (victoryShown || playerHit || isRestarting) return;
 
         bool timeOver = !timerBar.IsRunning;
         bool noEnemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length == 0;
@@ -69,6 +72,7 @@ public class GameRunManager : MonoBehaviour
             ShowVictory();
         }
     }
+
     private void ShowVictory()
     {
         victoryShown = true;
@@ -90,9 +94,11 @@ public class GameRunManager : MonoBehaviour
 
         if (ghostSpawner)
         {
-            ghostSpawner.ResetSpawner();
+             ghostSpawner.enabled = true; 
+            ghostSpawner.ResetSpawner(); 
         }
 
+        playerHit = false;
         isRestarting = false;
     }
 }

@@ -42,7 +42,7 @@ public class TimerBar : MonoBehaviour
 
     public void StartTimer()
     {
-        if (hasEnded) return; // impede reinício após terminar
+        hasEnded = false; // garante que o timer possa reiniciar
         isRunning = true;
     }
 
@@ -55,6 +55,13 @@ public class TimerBar : MonoBehaviour
     {
         currentTime = Mathf.Min(currentTime + amount, runDuration);
         fillImage.fillAmount = currentTime / runDuration;
+
+        // Se o tempo tinha acabado, reativa o timer
+        if (hasEnded && currentTime > 0)
+        {
+            hasEnded = false;
+            isRunning = true;
+        }
     }
 
     public void SetRemainingTime(float value)
