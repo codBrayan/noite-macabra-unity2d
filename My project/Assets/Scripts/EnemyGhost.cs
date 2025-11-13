@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyGhost : MonoBehaviour
 {
+    
     [Header("Movimento")]
     public float speed = 2f;
     private Transform player;
