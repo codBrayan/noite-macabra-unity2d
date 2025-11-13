@@ -78,6 +78,7 @@ public class GhostSpawner : MonoBehaviour
     {
         timer = 0f;
         StopAllCoroutines();
+        
     }
 
 #if UNITY_EDITOR

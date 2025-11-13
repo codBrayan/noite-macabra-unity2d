@@ -4,10 +4,17 @@ using System;
 public class LifePowerUp : MonoBehaviour
 {
     public int lifeValue = 1;
+    [SerializeField] private float itemLifetime = 7f;
     public event Action OnCollected;
 
     private bool collected = false;
 
+        void Start()
+        {
+            // Destroi o item depois de um tempo, mesmo que não seja coletado
+            Destroy(gameObject, itemLifetime);
+        }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collected) return; // evita execução duplicada
@@ -26,7 +33,7 @@ public class LifePowerUp : MonoBehaviour
             collected = true;
 
             OnCollected?.Invoke();
-            OnCollected = null; 
+            OnCollected = null;
 
             Destroy(gameObject);
         }
