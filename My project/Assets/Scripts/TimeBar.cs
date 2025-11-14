@@ -31,6 +31,13 @@ public class TimerBar : MonoBehaviour
         currentTime = Mathf.Max(currentTime, 0);
         fillImage.fillAmount = currentTime / runDuration;
 
+        // Verifica se o tempo é igual a 32 e aumenta o spawn de enemy
+        if (Mathf.Approximately(currentTime, 32f))
+        {
+            Debug.Log("O tempo chegou a 32 segundos!");
+            // Aqui você pode adicionar a lógica para aumentar o spawn de inimigos
+        }
+
         if (currentTime <= 0 && !hasEnded)
         {
             hasEnded = true;

@@ -9,7 +9,6 @@ public class GameRunManager : MonoBehaviour
     [SerializeField] private TimerBar timerBar;
     [SerializeField] private GhostSpawner ghostSpawner;
     [SerializeField] private GameObject victoryScreen;
-
     private bool isRestarting = false;
     private bool victoryShown = false;
     private bool playerHit = false;

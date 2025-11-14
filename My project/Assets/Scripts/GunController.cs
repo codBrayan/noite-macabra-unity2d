@@ -17,6 +17,8 @@ public class GunController : MonoBehaviour
     private bool isFiring = false;
     private float nextFireTime = 0f;
     private Coroutine powerUpCoroutine;
+    public  AudioSource source;
+    public  AudioClip shootClip;
 
     void Update()
     { 
@@ -42,7 +44,8 @@ public class GunController : MonoBehaviour
     private void Shoot()
     {
         if (projectilePrefab == null || firePoint == null) return;
-        
+
+        source.PlayOneShot(shootClip);
         if (numberOfProjectiles <= 1)
         {
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);

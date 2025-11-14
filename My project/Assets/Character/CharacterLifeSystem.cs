@@ -8,6 +8,9 @@ public class CharacterLifeSystem : MonoBehaviour
     public int currentLives;       
     public LifeUI lifeUI;
 
+    public AudioSource source;
+    public AudioClip damageClip;
+
     void Start()
     {
         currentLives = startLives;
@@ -17,6 +20,7 @@ public class CharacterLifeSystem : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentLives -= damage;
+        source.PlayOneShot(damageClip);
         currentLives = Mathf.Max(currentLives, 0);
 
         Debug.Log($"💥 Player tomou {damage} de dano! Vidas restantes: {currentLives}");
